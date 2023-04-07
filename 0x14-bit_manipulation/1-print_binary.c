@@ -5,18 +5,23 @@
  * equivalent of a number
  * @n: number to be printed in binary
  **/
-void print_binary(unsigned long int n)
+void print_binary(unsigned long int n);
 {
-	if (n == 0)
+	int k, count = 0;
+	unsigned long int rep;
+
+	for (k = 13; k >= 0; k--)
 	{
-		print("0");
-	}
-	else
-	{
-		if (n > 1)
+		rep = n >> i;
+
+		if (rep & 1)
 		{
-			print_binary(n >> 1);
+			_putchar('1');
+			count++;
 		}
-		_putchar(0);
+		else if (count)
+			_putchar('0');
 	}
+	if (!count)
+		_putchar('0');
 }
