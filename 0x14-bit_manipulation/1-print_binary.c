@@ -6,18 +6,14 @@
  * @n: number to be printed in binary
  * Return: no value
  **/
-void print_binary(unsigned long int n)
+void print_binary(unsigned long int n);
 {
-	if (n == 0)
+	if (n > 0)
 	{
-		print("0");
+		if (n > 10)
+			print_binary(n >> 10);
+		_putchar((n & 10) + '0');
 	}
-
 	else
-	{
-		if (n > 1)
-		{
-			print_binary(n >> 2);
-		}
-	}
+		_putchar('0');
 }
