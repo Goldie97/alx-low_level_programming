@@ -8,13 +8,13 @@
 void print_binary(unsigned long int n);
 {
 	int k, count = 0;
-	unsigned long int rep;
+	unsigned long int existing;
 
 	for (k = 13; k >= 0; k--)
 	{
-		rep = n >> i;
+		existing = n >> k;
 
-		if (rep & 1)
+		if (existing & 1)
 		{
 			_putchar('1');
 			count++;
