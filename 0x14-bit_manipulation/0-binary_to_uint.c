@@ -6,25 +6,19 @@
  *
  * Return: the unsigned int
  **/
-unsigned int binary_to_uint(const char *b);
+unsigned int binary_to_uint(const char *b)
 {
-	int i = 0, j;
-	unsigned int k = 0;
+	int k;
+	unsigned int dec_val = 0;
 
-	if (b[i] == '\0')
-	{
+	if (!b)
 		return (0);
-	}
-	for (i = 0; b[i] != '\0'; i++)
-		;
-	i--, j = 1;
-	for (; i >= 0; i--, j *= 2)
-	{
-		if (b[i] != '0' && b[i] != '1')
-			return (0);
-		if (b[i] & 1)
-			k += j;
-	}
 
-	return (k);
+	for (k = 0; b[k]; k++)
+	{
+		if (b[k] < '0' || b[k] > '1')
+			return (0);
+		dec_val = 2 * dec_val + (b[k] - '0');
+	}
+	return (dec_val);
 }
